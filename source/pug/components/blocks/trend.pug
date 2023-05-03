@@ -1,0 +1,91 @@
+mixin trend()
+  -
+    const dataTrend = [
+      {
+
+        path: "content",
+        image: "trend-1",
+        format:"jpg",
+        width:"320",
+        height:"220",
+        altText:"Лошадь",
+        header:"Уроки верховой езды",
+        describe: "Уроки профессиональной верховой езды для любителей и начинающих",
+
+      },
+            {
+
+        path: "content",
+        image: "trend-2",
+        format:"jpg",
+        width:"320",
+        height:"220",
+        altText:"Лошадь",
+        header:"Прогулки верхом с\u00A0тренером",
+        describe: "Тренировка клиентов, подготовка к занятиям конным спортом на профессиональном уровне под руководством опытных теннеров",
+      },
+            {
+
+        path: "content",
+        image: "trend-3",
+        format:"jpg",
+        width:"320",
+        height:"220",
+        altText:"Лошадь",
+        header:"Фотосессии",
+        describe: "Уроки профессиональной верховой езды для любителей и начинающих",
+      },
+            {
+
+        path: "content",
+        image: "trend-4",
+        format:"jpg",
+        width:"320",
+        height:"220",
+        altText:"Лошадь",
+        header:"Прогулки верхом с\u00A0тренером",
+        describe: "Тренировка клиентов, подготовка к занятиям конным спортом на профессиональном уровне под руководством опытных теннеров",
+      },
+                        {
+        path: "content",
+        image: "trend-5",
+        format:"jpg",
+        width:"320",
+        height:"220",
+        altText:"Лошадь",
+        header:"Фотосессии",
+        describe: "Уроки профессиональной верховой езды для любителей и начинающих",
+      },
+      {
+
+        path: "content",
+        image: "trend-6",
+        format:"jpg",
+        width:"320",
+        height:"220",
+        altText:"Лошадь",
+        header:"Прогулки верхом с\u00A0тренером",
+        describe: "Тренировка клиентов, подготовка к занятиям конным спортом на профессиональном уровне под руководством опытных теннеров",
+      },
+
+
+
+
+
+
+    ]
+
+  section.trend
+    .container
+      h2.titel Направления клуба
+      .subtitle
+        p Подзаголовок блока
+      ul.trend__list
+        each item in dataTrend
+          li.trend__item
+            .trend__img
+              +img(item.path, item.image, item.format, item.width, item.height, item.altText)
+            h3=item.header
+            p=item.describe
+      button.button.button--yellow.trend__button(type="button", data-open-modal) Записаться
+

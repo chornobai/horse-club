@@ -1,0 +1,154 @@
+.horses {
+  margin-bottom: 144px;
+
+  .container {
+    max-width: 1920px;
+    overflow: hidden;
+    @include vp-1023 {
+      overflow:initial;
+
+    }
+    h2 {
+      margin-right: 10px;
+      margin-bottom: 70px;
+      color: $black-next;
+      font-family: 'Philosopher';
+
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 36px;
+      text-align: center;
+
+      @include vp-1023 {
+        font-size: 30px;
+        line-height: 36px;
+      }
+      @include vp-767 {
+        font-size: 27px;
+        line-height: 27px;
+      }
+      @include vp-374 {
+        font-size: 21px;
+        line-height: 21px;
+      }
+
+    }
+  }
+
+
+  .horse-slider {
+    padding-top: size(60px);
+    padding-bottom: size(43px);
+    overflow: initial;
+    max-width: 1170px;
+
+  }
+
+
+  .horse-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    opacity: 0.4;
+    max-width: 370px;
+    transform: translateY(-39px);
+    transition: ease 0.3s;
+
+
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    padding: 0 25px 29px  25px;
+
+    @include vp-1023 {
+      opacity: 1;
+      transform: none;
+      padding: 0 17px 35px  17px;
+    }
+
+    @include vp-480 {
+      padding: 0 9px 21px  9px;
+    }
+
+    img {
+      position: relative;
+      top: -25px;
+    }
+
+    .horse-item__title h3 {
+      font-family: 'Roboto';
+      font-weight: 500;
+      font-size: 23px;
+      line-height: 27px;
+      color: $black-next;
+      margin:0;
+
+      @include vp-1023{
+        font-size: 15px;
+        line-height: 15px;
+      }
+    }
+    .horse-item__title {
+      margin-bottom: 31px;
+    }
+
+    .horse-item__describe {
+
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 21px;
+      color: $grey;
+      padding: 0 20px;
+      position:relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top:0;
+        left:50%;
+        transform: translateX(-50%);
+        width: 53px;
+
+        height: 1px;
+        background: $green;
+
+        @include vp-1023 {
+          top: -10%;
+          width: 26px;
+        }
+      }
+
+      @include vp-1023 {
+        font-size: 14px;
+        line-height: 21px;
+        padding: 0;
+
+        p {
+          padding: 0;
+        }
+      }
+
+      @include vp-767 {
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      @include vp-480 {
+        font-size: 13px;
+        line-height: 20px;
+      }
+    }
+
+  }
+}
+
+
+.horse-item.swiper-slide-next,
+.horse-item.swiper-slide-active,
+.horse-item.swiper-slide-prev {
+  opacity: 1;
+  transform: none;
+}
+

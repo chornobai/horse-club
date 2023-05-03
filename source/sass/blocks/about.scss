@@ -1,0 +1,154 @@
+.about {
+  margin-bottom: 130px;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100px;
+    top: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .about-img {
+      position: absolute;
+      top: calc(109px + (157 - 109) * ((100vw - 1024px) / (1920 - 1024)));
+      left: calc(-46px + (-235 - -46) * ((100vw - 1024px) / (1920 - 1024)));
+      z-index: -1;
+      width: calc(513px + (871 - 513) * ((100vw - 1024px) / (1920 - 1024)));
+      height: calc(313px + (529 - 313) * ((100vw - 1024px) / (1920 - 1024)));
+      @include vp-1023 {
+        width: calc(450px + (513 - 450) * ((100vw - 768px) / (1023 - 768)));
+        height: calc(273px + (313 - 273) * ((100vw - 768px) / (1023 - 768)));
+        left: calc(-80px + (-46 - -80) * ((100vw - 768px) / (1023 - 768)));
+        top: calc(112px + (109 - 112) * ((100vw - 768px) / (1023 - 768)));
+      }
+
+      @media (max-width: 691px) {
+        display: none;
+      }
+    }
+
+    h2 {
+      grid-column: span 2;
+      align-self: center;
+      margin-right: 10px;
+    }
+  }
+}
+
+.about__right {
+  max-width: 538px;
+  align-self: flex-end;
+  padding-top: 35px;
+
+  @include vp-1023 {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 691px) {
+    align-self: center;
+  }
+  @include vp-480 {
+    row-gap: 30px;
+  }
+}
+.about-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(199px, 1fr));
+  padding: 0;
+
+  list-style: none;
+  grid-row-gap: 23px;
+  margin: 0 10px 42px 0;
+
+  span {
+    color: $green;
+    font-family: "Philosopher";
+
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 160%;
+
+    @include vp-1023 {
+      font-size: 32px;
+    }
+    @include vp-480 {
+      font-size: 27px;
+      line-height: 18px;
+    }
+  }
+
+  p {
+    font-family: "Roboto";
+    color: $black;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    margin: 0;
+  }
+  @include vp-1023 {
+    max-width: calc(418px + (538 - 418) * ((100vw - 768px) / (1023 - 768)));
+    align-self: flex-end;
+  }
+
+  @include vp-767 {
+    max-width: 419px;
+  }
+
+  @media (max-width: 691px) {
+    align-self: center;
+  }
+
+  @include vp-480 {
+    max-width: 100%;
+    margin: 0;
+    grid-column-gap: 20px;
+    grid-row-gap: 43px;
+  }
+}
+
+.about-item {
+  padding-right: 14px;
+
+  p {
+    @include vp-1023 {
+      font-size: calc(13px + (15 - 13) * ((100vw - 768px) / (1023 - 768)));
+    }
+    @include vp-767 {
+      font-size: 13px;
+      line-height: 22px;
+    }
+    @include vp-480 {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+  @include vp-480 {
+    text-align: center;
+    padding: 0 16px;
+  }
+  @include vp-374 {
+    padding: 0 46px;
+  }
+}
+
+.about__right-describe {
+  font-family: "Roboto";
+  color: $grey;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 28px;
+  @include vp-1023 {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  @include vp-374 {
+    font-size: 12px;
+    line-height: 19px;
+  }
+}

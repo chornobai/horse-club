@@ -1,0 +1,111 @@
+.benefits {
+  .benefits__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 182px;
+
+    grid-row-gap: 134px;
+
+    @include vp-767 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include vp-480 {
+      grid-template-columns: 1fr;
+
+    }
+  }
+
+  .benefits__item {
+    padding: 0 15px;
+    @include vp-1023 {
+      padding: 0 13px;
+    }
+
+  }
+
+  .benefits__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 19px;
+      white-space: nowrap;
+
+      @include vp-1279 {
+        font-size: 15px;
+        line-height: 25px;
+      }
+
+      @include vp-1023 {
+        line-height: 20px;
+      }
+      @include vp-374 {
+        font-size: 14px;
+      }
+    }
+
+    p {
+      font-family: "Roboto";
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 151.7%;
+      text-align: center;
+      color: $grey;
+      @include vp-1279 {
+        font-size: 13px;
+      }
+    }
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      left: 50%;
+      transform: translate(-50%);
+      top: -138px;
+      width: 86%;
+      height: 86%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include vp-1023 {
+        width: 75%;
+        height: 75%;
+      }
+      @include vp-767 {
+        top: -100px;
+      }
+    }
+    &--location {
+      &::after {
+        background-image: url("../img/decore/location.png");
+      }
+    }
+
+    &--dinner {
+      &::after {
+
+        background-image: url("../img/decore/dinner.png");
+        @include vp-1023 {
+          top: -127px;
+        }
+      }
+    }
+    &--watch {
+      &::after {
+        background-image: url("../img/decore/watch.png");
+      }
+    }
+    &--parking {
+      &::after {
+        background-image: url("../img/decore/parking.png");
+      }
+    }
+  }
+}

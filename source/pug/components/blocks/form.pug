@@ -1,0 +1,23 @@
+mixin form()
+  section.form
+    +img('decore', "form-clouds", "png", '1920', '161', 'clouds', "form-clouds")
+    .container
+
+      h2.visually-hidden Обратная связь
+      .form-block(data-validate)
+        +img('decore', "pine", "png", '297', '371', 'pine')
+        h3  Отвечаем на вопросы
+        p Мы ответим на все ваши вопросы по телефону, или вы можете записаться на <b>бесплатное</b> пробное занятие
+        form(method="POST", action="#")&attributes(attributes)
+          div(class= 'form-list')
+            +custom-input({inputType: "text", inputId: `name`, inputName: `name`, inputPlaceholder: "Ваше имя",inputError: "Некорректное имя"})(data-validate-type= "text", data-limitations="letters")
+            +custom-input({inputType: "tel", inputId: `phone`, inputName: `phone`, inputPlaceholder: "Ваш телефон",inputError: "Некорректный телефон"})(data-validate-type= "phone")
+            +btn({text: 'Задать вопрос', type: "submit"})(data-open-modal-success).button.button--yellow
+            .form__agreement.custom-input(data-validate-type= "checkbox")
+              <input class="visually-hidden form__agreement-checkbox" type="checkbox" id="checkbox-agree" name="checkbox-agree" checked >
+              <label for="checkbox-agree">Даю согласие на&nbsp;<span>обработку данных</span></label>
+              .custom-input__error Подтвердите согласие
+
+
+
+

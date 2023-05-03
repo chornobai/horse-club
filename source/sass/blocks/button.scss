@@ -1,0 +1,83 @@
+.button {
+  display: inline-flex;
+  margin: 10px 0;
+  padding: 20px 73px;
+
+  color: $color-default-white;
+
+  border: none;
+  cursor: pointer;
+
+
+  text-transform: uppercase;
+
+  &--yellow {
+    background: rgb(255,242,191);
+    background-image: linear-gradient(180deg, rgba(255,242,191,1) 0%, rgba(247,199,2,1) 100%);
+    box-shadow: 0px 2px 1px $brown;
+    border-radius: 5px;
+    color:$brown;
+    font-family: "Roboto";
+    font-size: 15px;
+    line-height: 32px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+
+
+    &:hover{
+      animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955)  both;
+    }
+
+    &:active {
+      background-image: linear-gradient( rgba(247,199,2,1) 100%);
+      box-shadow: 1px 1px 5px rgba($color: $brown, $alpha: 0.5);
+
+    }
+
+    @include vp-1279 {
+      font-size: 13px;
+      padding: 13px 53px;
+    }
+
+    @include vp-767 {
+      font-size: 10px;
+      padding: 6px 50px;
+    }
+  }
+
+  &--footer{
+    padding:14px 41px;
+    background: transparent;
+    border:1px solid $sun-middle;
+    text-align: center;
+    font-family: 'Roboto';
+    text-transform: none;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    white-space: nowrap;
+    color: #F5F5F5;
+    margin:0;
+    @include vp-767{
+      padding:14px 32px;
+    }
+    &:hover{
+      background: $sun-next;
+      color:black;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.intro {
+  min-height:calc(629px + (834 - 629)*((100vw - 320px)/(1920 - 320)));
+  max-width: 648px;
+  padding-top: 88px;
+
+  @include vp-767 {
+    max-width: 400px;
+  }
+
+  @include vp-480 {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .intro-text {
+    color: $grey-deep;
+    font-family: "Alergreya";
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    padding-left: 39px;
+    position: relative;
+
+    margin: 0 0 33px 0;
+    max-width: 523px;
+    &::after{
+      position: absolute;
+      content:"";
+      left: -5px;
+      top: 21%;
+      width: 26px;
+      height: 1px;
+      background: $grey-dark;
+
+      @include vp-480 {
+        left: 50%;
+        top: -21%;
+      }
+    }
+
+    span {
+      font-weight: 700;
+    }
+
+    @include vp-1279 {
+      font-size: 20px;
+      line-height: 140%;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 22px;
+      margin: 0 0 20px 0;
+    }
+    @include vp-480 {
+      padding:0;
+    }
+  }
+}

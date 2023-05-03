@@ -1,0 +1,7 @@
+mixin modal-photo(name)
+  section.modal(class= `modal--${name}`, data-modal-photo)
+    .modal-wrapper
+      .modal-overlay(data-modal-close)
+      .modal-content
+        img( src="#", width = '800', hight="800" alt="Клиенты")
+

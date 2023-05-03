@@ -1,0 +1,15 @@
+mixin modal-review(name)
+  section.modal(class= `modal--${name}`, data-modal-review)
+    .modal-wrapper
+      .modal-overlay(data-modal-close)
+      .modal-content
+        button.modal-button-close(type="button", aria-label="Закрыть попап", data-modal-close)
+          +icon("icon-close", 15, 15)
+        p
+        .review-modal-info
+          .review-modal-img
+            img(src="#" width="" height="" altText="Иконка автора")
+          p
+
+
+

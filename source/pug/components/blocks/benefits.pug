@@ -1,0 +1,43 @@
+mixin benefits()
+  -
+    const dataBenefits = [
+      {
+        href:"#",
+        class:"benefits__link--location",
+        header:"Удобное расположение",
+        describe: "Мы находимся недалеко от автостанции «Восточный» чтобы вам было удобно добираться",
+      },
+      {
+        href:"#",
+        class:"benefits__link--dinner",
+        header:"Обеденная зона",
+        describe: "Имеется столовая, чтобы Вы могли  перекусить и немного отдохнуть. Бесплатно чай, кофе, печенки.",
+      },
+      {
+        href:"#",
+        class:"benefits__link--watch",
+        header:"Профессиональные тренера",
+        describe: "Наши преподаватели имеют награды в конном спорте, и отличные отзывы среди наших учеников.",
+      },
+      {
+        href:"#",
+        class:"benefits__link--parking",
+        header:"Бесплатная парковка",
+        describe: "У нас имеется просторная парковка, чтобы вы могли без проблем припарковать свой автомобиль",
+      },
+
+    ]
+
+  section.benefits
+
+    .container
+
+      h2.titel Почему нас выбирают
+      p.subtitle Подзаголовок блока
+      ul.benefits__list
+        each item in dataBenefits
+          li.benefits__item
+            a.benefits__link(href=item.href, class= item.class)
+              h3=item.header
+              p=item.describe
+

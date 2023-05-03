@@ -1,0 +1,45 @@
+mixin footer(footerMods, currentPage)
+  -
+    const footerLinks = [
+      {
+        href: "#",
+        text: "О нас"
+      },
+      {
+        href: "#",
+        text: "Услуги и цены"
+      },
+      {
+        href: "#",
+        text: "Фотоальбом"
+      },
+      {
+        href: "#",
+        text: "Контакты"
+      },
+    ]
+
+  footer.footer(class=footerMods)
+    .container
+      if(currentPage === "index")
+        //- lighthouse снимает 10 баллов SEO за <a> без href
+        span.footer__logo
+          img(src="img/logo/logo-footer.svg" alt="Лого Максимус" width="159" height="48")
+      else
+        a.header__logo.header__logo--footer(href="index.html", aria-label="Переход на главную")
+          img(src="img/logo/logo-footer.svg" alt="Лого Максимус" width="159" height="48")
+      ul.footer__list
+        each link, index in footerLinks
+          li.footer__item
+            if(index === currentPage)
+              a.main-nav__link.main-nav__link--active=link.text
+            else
+              a.main-nav__link(href=link.href)=link.text
+      button.button.button--footer(type="button", aria-label="Заказать звонок" data-open-modal) Заказать звонок
+      ul.footer-agreement-list
+        li.footer-agreement-item
+          a.footer-agreement-link(href="#") Соглашение на обработку персональных данных
+        li.footer-agreement-item
+          a.footer-agreement-link(href="#")  Политика конфенденциальности
+
+

@@ -1,0 +1,299 @@
+.trend {
+  padding: 157px 0;
+  background: url('../img/bg/bg-trend.png') no-repeat center;
+  background-size: cover;
+  position: relative;
+  padding-bottom: 278px;
+  margin-bottom: 143px;
+  overflow: hidden;
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+      color: $black-next;
+      font-family: 'Philosopher';
+
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 36px;
+      text-align: center;
+      margin-right: 10px;
+      margin-bottom: 8px;
+
+      @include vp-1023{
+        font-size: 27px;
+      }
+      @include vp-374 {
+        font-size: 21px;
+
+      }
+    }
+
+    .subtext {
+      font-family: 'Roboto';
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 18px;
+
+      text-align: center;
+      color: $black-next;
+      margin-bottom: 89px;
+      margin-right: 10px;
+
+      @include vp-1023{
+        font-size: 13px;
+      }
+
+
+    }
+
+
+  }
+  .trend__list {
+
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+
+
+    list-style: none;
+    width: 100%;
+
+    position: relative;
+    &::after{
+      position: absolute;
+      content: "";
+      height: 530px;
+      width: 305px;
+      bottom: -292px;
+      left: -239px;
+      z-index: 10;
+
+      background: url('../img/decore/horse-left.png') no-repeat center;
+      background-size: cover;
+
+      @include vp-1023{
+        height: 272px;
+        width: 157px;
+        background-size: cover;
+        bottom: -257px;
+        left: -20px;
+      }
+
+      @include vp-480 {
+        height: 196px;
+        width: 113px;
+
+      }
+
+      @include vp-374 {
+        height: 149px;
+        width: 86px;
+      }
+    }
+    &::before{
+      position: absolute;
+      content: "";
+      background: url('../img/decore/horse-right.png') no-repeat center;
+      background-size: cover;
+      height: 532px;
+      width: 372px;
+      bottom: -302px;
+      right: -291px;
+      z-index: 10;
+
+      @include vp-1023 {
+
+        height: 270px;
+        width: 189px;
+        right: -36px;
+        bottom: -256px;
+        background-size: cover;
+      }
+
+      @include vp-480 {
+        height: 199px;
+        width: 119px;
+
+      }
+
+      @include vp-374 {
+        height: 141px;
+        width: 98px;
+      }
+    }
+
+
+    h3 {
+      position: relative;
+      font-family: 'Roboto';
+      font-weight: 500;
+      font-size: 23px;
+      line-height: 117%;
+      text-align: center;
+      margin-top: 15px;
+      margin-bottom: 47px;
+      padding: 0 24px;
+      color: $black-next;
+
+      @include vp-1439 {
+        font-size:calc(13px + (8 + 8 * 0.7 ) * ((100vw - 1023px) / 1920));
+      }
+
+      @include vp-1023 {
+        font-size: 15px;
+        margin-top: 20px;
+        margin-bottom: 22px;
+      }
+
+      @include vp-480 {
+        font-size: 13px;
+        padding: 0;
+
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: -24px;
+        left: 46%;
+        width: 26px;
+        height: 1px;
+        background: $green;
+
+        @include vp-1023 {
+          bottom: - 12px;
+        }
+      }
+    }
+
+    p {
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      text-align: center;
+      color: $grey;
+      padding: 0 24px;
+
+      @include vp-1439 {
+        font-size:calc(13px + (2 + 2 * 0.7 ) * ((100vw - 1023px) / 1920));
+      }
+
+      @include vp-1023 {
+        font-size: 13px;
+        padding: 0;
+      }
+      @include vp-480 {
+
+        text-align: left;
+      }
+      @include vp-374 {
+
+        text-align: center;
+      }
+    }
+
+    @include vp-1023 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 43px;
+      margin-bottom: 40px;
+    }
+
+    @include vp-374 {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .trend__item {
+
+    background: $color-default-white;
+    padding: 0 25px 29px;
+    width: 370px;
+    margin-bottom: 62px;
+    border-radius: 6px;
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.07);
+    // margin-right: 30px;
+
+    &:hover{
+
+      box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.3);
+      transition: ease-in-out 0.3s;
+    }
+
+    @include vp-1439 {
+      width: calc(300px + (370 - 300) * ((100vw - 1023px) / (1920 - 1023)));
+      margin-bottom: calc(80px + (-18 + -18 * 0.7 ) * ((100vw - 1023px) / 1920));
+    }
+
+    @include vp-1023 {
+      width: 100%;
+      padding: 0 25px 22px;
+      margin-bottom:0;
+    }
+
+    @include vp-480 {
+      padding: 0 12px 22px;
+    }
+  }
+
+  .trend__img {
+    position: relative;
+    top: -29px;
+    img{
+      width: 100%;
+
+      border-radius: 6px;
+    }
+
+    @include vp-1023 {
+      top: -26px;
+
+    }
+
+  }
+  .trend__button{
+    margin:-9px 0 0 -9px;
+
+    @include vp-1023 {
+      padding: 6px 50px;
+      font-family: 'Montserrat';
+
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 32px;
+      letter-spacing: 0.07em;
+
+    }
+    @include vp-374{
+      padding: 16px 44px;
+      font-family: 'Montserrat';
+
+      font-size: 10px;
+      line-height: 10px;
+
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    height: 168px;
+    width: 100vw;
+    bottom: -1px;
+    z-index:99;
+    background: url('../img/decore/clouds.png') repeat center;
+    background-size: cover;
+    // animation: kenburns-bottom 5s ease-out infinite both;
+  }
+
+
+
+}

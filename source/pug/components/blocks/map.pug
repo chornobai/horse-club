@@ -1,0 +1,40 @@
+mixin map()
+  section.map
+    h2.visually-hidden Наш адрес
+
+    div.map-container(id="map")
+    .container
+      section.map-info
+        h3 Контакты
+        ul.map-info-list
+          li.map-info-item
+            +icon('icon-pin',14, 22)
+            p ул. Ленина, 25, офис 65
+          li.map-info-item
+            +icon('icon-phone-map', 19, 19)
+            a(href="tel:74950000000") +7 (495) 000-00-00
+          li.map-info-item
+            +icon("icon-mail", 22, 16)
+            a(href="mailto:mail@somemail.com") mail@somemail.com
+          li.map-info-item
+            +icon("icon-watch", 20, 20)
+            .map-info-work
+              p Пн-Пт: 10:00 - 19:00
+              p Сб: 10:00 - 17:00
+              p Вс: выходной
+        ul.map-info-social
+          li
+            a.map-info-social-link(href= "#")
+              +icon("icon-insta-social", 32, 32)
+          li
+            a.map-info-social-link(href= "#")
+              +icon("icon-youtube", 32, 32)
+          li
+            a.map-info-social-link(href= "#")
+              +icon("icon-whatsapp", 32, 32)
+          li
+            a.map-info-social-link(href= "#")
+              +icon("icon-vk-social", 32, 32)
+    img.left-decore(src="img/decore/left-tree.png", width="593", height="358", altText="bush")
+    img.right-decore(src="img/decore/right-tree.png", width="303", height="722", altText="bush")
+

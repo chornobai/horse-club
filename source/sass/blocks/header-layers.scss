@@ -1,0 +1,50 @@
+.header__layer{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+  transition: 0.5s cubic-bezier(0.075,0.5,0,1);
+
+
+
+  &--bush-left {
+    background-image: url('../img/decore/header-left-bush.png');
+    width: calc(44px + (211 - 44)*((100vw - 320px)/(1920 - 320)));
+    height: calc(93px + (435 - 93)*((100vw - 320px)/(1920 - 320)));
+    left: 0;
+    bottom:0;
+
+    z-index: 2;
+
+    @include vp-374{
+      display: none;
+    }
+  }
+
+  &--bush-right {
+    background-image: url('../img/decore/header-right-bush.png');
+    width: calc(34px + (167 - 34)*((100vw - 320px)/(1920 - 320)));
+    height: calc(131px + (632 - 131)*((100vw - 320px)/(1920 - 320)));
+    right: 0;
+    bottom:0;
+
+    z-index: 2;
+
+    @include vp-374{
+      display: none;
+    }
+  }
+
+  &--clouds {
+    background-repeat: repeat-y;
+    height: calc(74px + (189 - 74)*((100vw - 320px)/(1023 - 320)));
+    bottom: -2px;
+    background-size: cover;
+    transform: translate3d(0, calc(var(--scrollTop) / 15), 0);
+
+  }
+
+}

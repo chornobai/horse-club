@@ -1,0 +1,275 @@
+.form {
+  background-image: url("../img/bg/bg-form.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 786px;
+  position: relative;
+  margin-bottom: 98px;
+
+  @include vp-1279 {
+    background-position: 43%;
+  }
+
+  @include vp-1023 {
+    background-image: url("../img/bg/bg-form-tab.jpg");
+    background-position: 50% top;
+    min-height:calc(1000px + (1292 - 1000)*((100vw - 320px)/(1023 - 320)));
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 168px;
+    width: 100vw;
+    bottom: -1px;
+    z-index: 99;
+    background: url("../img/decore/clouds.png") repeat center;
+    background-size: cover;
+
+    animation: kenburns-bottom 10s ease-out infinite both;
+  }
+
+  .form-clouds {
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    width: 100vw;
+    z-index: 99;
+    animation: kenburns-top 10s ease-out infinite both;
+  }
+
+  h3 {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 35px;
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+
+    color: #363434;
+
+    @include vp-767 {
+      font-size: 32px;
+    }
+    @include vp-480 {
+      font-size: 27px;
+
+    }
+    @include vp-374 {
+      font-size: 22px;
+    }
+  }
+  p {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 21px;
+
+    text-align: center;
+
+    color: #7e7e7e;
+    @include vp-767 {
+      font-size: 13px;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 135px;
+    @include vp-1023 {
+      justify-content:center;
+      padding-top: 110px;
+    }
+    @include vp-480{
+      padding:130px 20px;
+    }
+    @include vp-374{
+      padding:130px 10px;
+    }
+  }
+}
+
+.form-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 60px 57px 59px 57px;
+  background: white;
+  max-width: 470px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0px 16px 51px rgba(0, 0, 0, 0.11);
+  border-radius: 5px;
+  position: relative;
+
+  &::before {
+    display: none;
+    position: absolute;
+    content: "";
+    height: calc(384px + (712 - 384)*((100vw - 320px)/(1023 - 320)));
+    width: 100vw;
+    bottom: calc(-358px + (-684 - -358)*((100vw - 320px)/(1023 - 320)));
+    z-index: 99;
+    background-image: url("../img/decore/form-horse-tab.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include vp-1023 {
+      display: block;
+    }
+
+  }
+  @include vp-767 {
+    padding: 40px;
+    max-width: 450px;
+  }
+  @include vp-480 {
+    padding: 30px;
+    max-width: 100%;
+  }
+  @include vp-374 {
+    padding: calc(20px + (20 - 30)*((100vw - 374px)/(1920 - 320)));
+    max-width: 100%;
+  }
+  img {
+    position: absolute;
+    bottom: -111px;
+    right: -144px;
+
+    @include vp-1279 {
+      width: 213px;
+      height: 267px;
+      bottom: calc(-58px + (-111 - -58)*((100vw - 1023px)/(1920 - 1023)));
+      right: calc(-69px + (-144 - -69)*((100vw - 1023px)/(1920 - 1023)));
+      transition: 0.2s;
+    }
+    @include vp-1023 {
+      display: none;
+    }
+  }
+  form {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 11px;
+    @include vp-480 {
+      padding:0;
+    }
+  }
+}
+
+.form-list {
+  padding-top: 14px;
+
+  button {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+    @include vp-1023 {
+      font-size: 15px;
+      line-height: 15px;
+      padding:24px 0;
+    }
+    @include vp-767 {
+      font-size: 15px;
+      padding:24px 0;
+    }
+
+    @include vp-480 {
+      font-size: 13px;
+      padding:25px 0;
+    }
+    @include vp-374 {
+      font-size: 10px;
+      line-height: 10px;
+      padding:17px 0;
+    }
+  }
+}
+
+.form__agreement label {
+  position: relative;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: $grey;
+  padding-left: 30px;
+  span {
+    text-decoration: underline;
+  }
+  @include vp-480 {
+    font-size: 13px;
+    line-height: 15px;
+    white-space: nowrap;
+  }
+}
+
+.form__agreement input + label::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -1px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 2px solid $error;
+  border-radius: 2px;
+
+  cursor: pointer;
+}
+.form__agreement-checkbox:checked + label::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -1px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 2px solid $sun-middle;
+  border-radius: 2px;
+
+  cursor: pointer;
+}
+
+.form__agreement-checkbox:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 13px;
+  height: 12px;
+  background: url("../img/svg/tick.svg") no-repeat center;
+
+  cursor: pointer;
+}
+
+.form__agreement-checkbox:hover + label::after,
+.form__agreement-checkbox:hover + label::before {
+  opacity: 0.7;
+}
+
+.form__agreement-checkbox:disabled + label::after,
+.form__agreement-checkbox:disabled + label::before {
+  opacity: 0.3;
+}
+
+.form__agreement {
+  .custom-input__error {
+    right: auto;
+    left: -64px;
+    transform: translateX(50%);
+    top: 26px;
+    font-size: 12px;
+  }
+}
+
+.form__agreement.custom-input.is-invalid {
+  height: 16px;
+}

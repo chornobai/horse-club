@@ -1,0 +1,42 @@
+doctype html
+
+include ../components
+
+block variables
+
+html(lang="ru")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content="Максимус — конный клуб, лошади, обучение, спорт")
+    //- генерируйте favicon тут - https://realfavicongenerator.net/
+    //- в подключение фавикон манифеста обязательно добавьте строчки crossorigin="use-credentials"
+    link(rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png")
+    link(rel="manifest" href="favicon/site.webmanifest" crossorigin="use-credentials")
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU">
+    </script>
+    //- используйте только для шрифта находящегося на первом экране
+
+    link(rel="stylesheet", href="css/style.min.css")
+
+  body
+    .wrapper
+      .container-wrapper
+        +sprite()
+        .wrapper(class=wrapperMods)
+          if (hasHeader)
+            +header(headerMods, currentPage)
+
+          block main
+
+          if (hasFooter)
+            +footer(footerMods)
+
+    block modals
+
+    script(src="js/vendor.min.js")
+    script(src="js/main.min.js")

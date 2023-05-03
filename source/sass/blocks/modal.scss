@@ -1,0 +1,190 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  background-color: rgba($color-default-black, 0.8);
+  transform: scale(1.2);
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity $trans-modal,
+    transform $trans-modal,
+    visibility $trans-modal;
+
+  pointer-events: none;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &-wrapper {
+    position: relative;
+
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 60px 40px;
+
+    @include vp-767 {
+      padding: 60px 16px;
+    }
+  }
+
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &-content {
+    position: relative;
+
+    width: 600px;
+    padding: 70px 52px 40px 52px;
+    border-radius: 6px;
+
+    background-color: $color-default-white;
+
+    @include vp-767 {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+
+  .modal-button-close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    z-index: 1;
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+    cursor: pointer;
+    &:hover{
+      transform: scale(1.2);
+      transition: 0.2s;
+    }
+    &:active{
+      transform: scale(1);
+    }
+  }
+
+
+  &.is-active {
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+
+    pointer-events: auto;
+  }
+  &--appointment{
+    h2 {
+      font-family: 'Philosopher';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 35px;
+      margin: 0;
+      margin-bottom: 60px;
+
+      text-align: center;
+
+      color: #363434;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      .button {
+        align-self: center;
+      }
+    }
+    .modal-form-list{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      .custom-input{
+        margin-bottom:30px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+  }
+
+  &--success {
+
+    .modal-content {
+      padding: 80px 52px 80px;
+
+      p {
+        font-family: 'Philosopher';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 46px;
+        margin: 0;
+        margin-bottom: 0;
+
+        text-align: center;
+
+        color: #363434;
+
+      }
+    }
+  }
+
+  &--photo {
+    transform: scale(1);
+    .modal-content{
+      padding: 5px;
+      border-radius: 6px;
+      width: size(700px);
+    }
+    &.is-active {
+      transform: scale(1.2);
+
+    }
+  }
+  &--review {
+    .modal-content {
+      padding: 47px 48px 33px;
+      display: flex;
+      flex-direction: column-reverse;
+      p{
+        text-align: justify;
+        margin-top: 0;
+      }
+    }
+    .review-modal-info{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

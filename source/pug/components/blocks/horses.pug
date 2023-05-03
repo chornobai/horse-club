@@ -1,0 +1,73 @@
+mixin horses()
+  -
+    const dataHorse = [
+      {
+        path: "slides",
+        image: "horse-1",
+        format:"jpg",
+        width:"320",
+        height:"421",
+        altText:"Horse",
+        name:'Жазель',
+        describe:'Уроки профессиональной верховой езды для любителей и начинающих'
+      },
+          {
+        path: "slides",
+        image: "horse-2",
+        format:"jpg",
+        width:"320",
+        height:"421",
+        altText:"Horse",
+        name:'Юджин',
+        describe:'Уроки профессиональной верховой езды для любителей и начинающих'
+      },
+          {
+        path: "slides",
+        image: "horse-3",
+        format:"jpg",
+        width:"320",
+        height:"421",
+        altText:"Horse",
+        name:'Мелисса',
+        describe:'Уроки профессиональной верховой езды для любителей и начинающих'
+      },
+          {
+        path: "slides",
+        image: "horse-4",
+        format:"jpg",
+        width:"320",
+        height:"421",
+        altText:"Horse",
+        name:'Циан',
+        describe:'Уроки профессиональной верховой езды для любителей и начинающих'
+      },
+          {
+        path: "slides",
+        image: "horse-5",
+        format:"jpg",
+        width:"320",
+        height:"421",
+        altText:"Horse",
+        name:'Хесана',
+        describe:'Уроки профессиональной верховой езды для любителей и начинающих'
+      },
+    ]
+
+  section.horses
+    .container
+      h2 Наши лошади
+      .swiper.horse-slider
+        .swiper-wrapper.horse-list
+          each item in dataHorse
+            .swiper-slide.horse-item
+              +img(item.path, item.image, item.format, item.width, item.height, item.altText)
+              .horse-item__title
+                h3= item.name
+              .horse-item__describe
+                p= item.describe
+    .swiper-controls.horse-controls
+      .swiper-button-prev.swiper-controls-prev.horse-controls-prev
+      .swiper-pagination.swiper-controls-pag.horse-controls-pag
+      .swiper-button-next.swiper-controls-next.horse-controls-next
+
+

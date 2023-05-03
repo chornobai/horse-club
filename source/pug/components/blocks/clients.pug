@@ -1,0 +1,104 @@
+mixin clients()
+  -
+    const dataClient = [
+      {
+        path: "slides",
+        image: "client-1",
+        format:"jpg",
+        width:"470",
+        height:"300",
+        altText:"Люди",
+      },
+            {
+        path: "slides",
+        image: "client-2",
+        format:"jpg",
+        width:"321",
+        height:"300",
+        altText:"Люди",
+      },
+            {
+        path: "slides",
+        image: "client-3",
+        format:"jpg",
+        width:"369",
+        height:"300",
+        altText:"Люди",
+      },
+              {
+        path: "slides",
+        image: "client-4",
+        format:"jpg",
+        width:"420",
+        height:"300",
+        altText:"Люди",
+      },
+              {
+        path: "slides",
+        image: "client-5",
+        format:"jpg",
+        width:"320",
+        height:"300",
+        altText:"Люди",
+      },
+              {
+        path: "slides",
+        image: "client-6",
+        format:"jpg",
+        width:"321",
+        height:"300",
+        altText:"Люди",
+      },
+              {
+        path: "slides",
+        image: "client-7",
+        format:"jpg",
+        width:"369",
+        height:"300",
+        altText:"Люди",
+      },
+              {
+        path: "slides",
+        image: "client-8",
+        format:"jpg",
+        width:"470",
+        height:"300",
+        altText:"Люди",
+      },
+              {
+        path: "slides",
+        image: "client-9",
+        format:"jpg",
+        width:"321",
+        height:"300",
+        altText:"Люди",
+      },
+              {
+        path: "slides",
+        image: "client-10",
+        format:"jpg",
+        width:"419",
+        height:"300",
+        altText:"Люди",
+      },
+
+
+    ]
+
+  section.clients
+    .container
+      h2.title Наши посетители
+      .swiper.client__swiper
+        .swiper-wrapper.client__swiper-list
+          each item in dataClient
+            .swiper-slide.client__swiper-item
+
+              +img(item.path, item.image, item.format, item.width, item.height, item.altText, "client-picture")
+              +icon('icon-loupe', 27, 27).client-zoom
+
+
+
+      .swiper-controls.client-controls
+        .swiper-button-prev.swiper-controls-prev.client-controls-prev
+        .swiper-pagination.swiper-controls-pag.client-controls-pag
+        .swiper-button-next.swiper-controls-next.client-controls-next

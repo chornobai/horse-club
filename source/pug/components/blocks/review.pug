@@ -1,0 +1,77 @@
+mixin review()
+  -
+    const dataReview = [
+      {
+        path: "slides",
+        image: "review-1",
+        format:"png",
+        width:"45",
+        height:"45",
+        altText:"Avatar",
+        name:'Константин Сюткин',
+        describe:'Развивает силу, гибкость и координацию всадника; Выпрямляется осанка Развивает силу, гибкость и координацию всадника; Выпрямляется осанка и повышается стрессоустойчивость; Общение с лошадью лечит умственные отклонения.Развивает силу, гибкость и координацию всадника; Выпрямляется осанка и повышается стрессоустойчивость; Общение с лошадью лечит умственные отклоненияи повышается стрессоустойчивость; Общение с лошадью лечит умственные отклонения.Развивает силу, гибкость и координацию всадника; Выпрямляется осанка и повышается стрессоустойчивость; Общение с лошадью лечит умственные отклонения.'
+      },
+          {
+        path: "slides",
+        image: "review-1",
+        format:"png",
+        width:"45",
+        height:"45",
+        altText:"Avatar",
+        name:'Константин Сюткин',
+        describe:'Развивает силу, гибкость и координацию всадника; Выпрямляется осанка и повышается стрессоустойчивость; Общение с лошадью лечит умственные отклонения.'
+      },
+          {
+        path: "slides",
+        image: "review-3",
+        format:"png",
+        width:"45",
+        height:"45",
+        altText:"Avatar",
+        name:'Валентина Сорокина',
+        describe:'Позитивные эмоции, расслабление, чувство ответственности и\u00A0даже некоторой сказочности, сразу появляется красивая осанка, работают все группы мышц.Позитивные эмоции, расслабление, чувство ответственности и\u00A0даже некоторой сказочности, сразу появляется красивая осанка, работают все группы мышц.'
+      },
+                {
+        path: "slides",
+        image: "review-3",
+        format:"png",
+        width:"45",
+        height:"45",
+        altText:"Avatar",
+        name:'Светлана Мирная',
+        describe:'Плюсов до безумия много! Реакция, общение с животным, любовь, понимание, взаимопонимание, терпение, здесь можно перечислять и перечислять очень много всего!'
+      }
+    ]
+
+  section.review
+    .container
+      h2.titel О нас говорят клиенты
+      .swiper.review-slider
+        .swiper-wrapper.review-list
+          each item in dataReview
+            .swiper-slide.review-item
+              .review-item__describe
+                p!= item.describe
+              button.review-btn(type="button") Подробнее
+                +icon('icon-round', 24, 24).review-btn-icon
+
+              .review-info-left
+                .review-info-img
+                  +img(item.path, item.image, item.format, item.width, item.height, item.altText)
+                p!= item.name
+                ul.review-info-list
+                  li.review-info-item
+                    a.review-insta(href="#")
+                      +icon('icon-instagram', 18, 18)
+                  li.review-info-item
+                    a.review-vk(href="#")
+                      +icon('icon-vk', 18, 18)
+              .review-info-right
+                +icon('icon-quote', 45, 36)
+    .swiper-controls.review-controls
+      .swiper-button-prev.swiper-controls-prev.review-controls-prev
+      .swiper-pagination.swiper-controls-pag.review-controls-pag
+      .swiper-button-next.swiper-controls-next.review-controls-next
+
+
+

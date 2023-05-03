@@ -1,0 +1,376 @@
+.header {
+  padding: size(13px) 0 0 0;
+  background-image: url('../img/bg/header-bg-1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow-y: hidden;
+  @include vp-1279 {
+    // background-image: url('../img/bg/header-bg-2.png');
+    background-position:59% center;
+  }
+  @include vp-1023 {
+    background-image: url('../img/bg/header-bg-2.png');
+    background-position: center;
+  }
+  @include vp-767 {
+    background-image: url('../img/bg/header-bg-3.png');
+    background-position: 82% center;
+  }
+  @include vp-650 {
+    background-image: url('../img/bg/header-bg-4.png');
+    background-position: 97% center;
+  }
+  // @include vp-480 {
+  //   background-image: url('../img/bg/header-bg-4.png');
+  //   background-position:center;
+  // }
+  @include vp-374 {
+    background-image: url('../img/bg/header-bg-5.png');
+    background-position:center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+  }
+
+  .header-wrapper {
+    display: grid;
+    grid-template-columns: 152px auto 195px;
+    grid-column-gap: 20px;
+
+    @include vp-767 {
+      grid-template-columns: 120px 1fr auto;
+    }
+    @include vp-480 {
+      grid-column-gap: 10px;
+    }
+  }
+
+  &__logo {
+    color: $color-default-white;
+
+    width: 152px;
+    height: 49px;
+    @include vp-767 {
+      width: 120px;
+      height: 39px;
+    }
+  }
+  .header-nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    padding-top: size(11px);
+    padding-right: 37px;
+
+    @include vp-1023{
+      padding-right:  calc(40px + (37 + 40) * ((100vw - 1023px) / (1920 - 1023)));
+    }
+    @include vp-767{
+      padding-right: calc(20px + (40 + 20) * ((100vw - 767px) / (1023 - 767)));
+    }
+
+
+    &__list {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      row-gap: 10px;
+      flex-wrap: wrap;
+
+
+
+      list-style: none;
+
+      @include vp-650 {
+        display: none;
+      }
+    }
+
+    &__item {
+      margin-right: 43px;
+
+
+      &:last-child {
+        margin-right: 0;
+
+      }
+
+      @include vp-1023 {
+        margin-right: calc(39px + (43 + 39) * ((100vw - 1023px) / (1920 - 1023)));
+      }
+      @include vp-767 {
+        transition: all 0.2s;
+        padding-right: calc(16px + (26 + 39) * ((100vw - 767px) / (1023 - 767)));
+        margin-right: 10px;
+        &:last-child{
+          padding-right: 0;
+        }
+      }
+    }
+
+    &__link {
+
+      font-family: 'Roboto';
+
+      font-weight: 400;
+      font-size: size(13px);
+      line-height: size(15px);
+      text-align: right;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      color: #202020;
+      &:hover{
+        text-decoration: underline;
+        text-decoration-color: $green;
+        text-underline-offset: size(10px);
+      }
+      &:focus{
+        text-decoration: underline;
+        text-decoration-color: $green;
+        text-underline-offset: size(10px);
+      }
+
+      &--active {
+        text-decoration: underline;
+        text-decoration-color: $green;
+        text-underline-offset: size(10px);
+      }
+
+      @include vp-1023 {
+        font-size: size(11px);
+        line-height: size(13px);
+      }
+    }
+
+    .header-nav__toggle-close {
+      display: none;
+    }
+    &__toggle {
+      display: none;
+
+      @include vp-650 {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 15px;
+        color: $black;
+
+        background: transparent;
+        border: 1px solid #008139;
+        border-radius: 3px;
+        padding:8px;
+        cursor: pointer;
+
+        .menu-on {
+          margin-right: 5px;
+          color: $green;
+          width: 13px;
+          height: 15px;
+        }
+
+        &:hover {
+          background: rgba($color: $sun, $alpha: 1);
+
+          transition: ease 0.5s;
+        }
+
+        &:focus {
+
+          transition: ease 0.5s;
+        }
+
+        &:active {
+          transform: scale(0.5);
+          transition: ease 0.5s;
+        }
+      }
+    }
+  }
+
+  .header__info {
+    display: grid;
+    grid-template-columns: min-content auto;
+    padding-top: size(13px);
+    @include vp-374 {
+      display:none;
+    }
+
+    @include vp-1023 {
+      svg {
+        width: 13px;
+        height: 13px;
+      }
+    }
+
+  }
+  .header__info-phone{
+    font-weight: 700;
+    font-family: "Roboto";
+    line-height: size(21px);
+    font-size: size(18px);
+    margin: 0 size(6px) 0 size(12px);
+
+    @include vp-1023 {
+      line-height: size(16px);
+      font-size: size(14px);
+    }
+
+    @include vp-480 {
+      line-height: size(13px);
+      font-size: size(11px);
+    }
+  }
+
+  .header__info-work{
+    font-weight: 400;
+    font-family: "Roboto";
+    font-size: size(13px);
+    line-height: size(15px);
+    color:$grey-next;
+    margin: 0;
+    grid-column: 2/-1;
+    padding: size(7px) size(9px) 0 0;
+    justify-self: center;
+
+    @include vp-1023 {
+      line-height: size(13px);
+      font-size: size(11px);
+    }
+
+    @include vp-480 {
+      line-height: size(11px);
+      font-size: size(9px);
+    }
+  }
+
+  .menu-open {
+    @include vp-650 {
+      .header-nav__toggle{
+        display:none;
+
+
+      }
+      .header-nav__list{
+        display:block;
+        align-self: center;
+        text-align: center;
+
+
+      }
+      .header-nav__toggle-close{
+        display:block;
+        align-self: flex-end;
+        border: none;
+        background: transparent;
+        padding:15px;
+        border-radius: 6px;
+        border: 2px solid transparent;
+        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
+
+        svg{
+
+          fill:white;
+        }
+        &:hover{
+          border: 2px solid $green;
+          background-color: rgba($color: $green, $alpha: 0.5);
+          transition: ease 0.5s;
+        }
+        &:focus{
+          border: 2px solid $green;
+          background-color: rgba($color: $green, $alpha: 0.5);
+          transition: ease 0.5s;
+        }
+        &:active{
+          transform: scale(0.5);
+          transition: ease 0.5s;
+        }
+      }
+      .header-nav{
+        justify-content: flex-start;
+        position: fixed;
+        height: 100vh;
+        width: 50vw;
+        flex-direction: column;
+        background: rgba($color: #000000, $alpha: 0.95);
+        top: 0;
+        left: 0;
+        transition: ease 0.5s;
+        z-index: 999;
+        scroll-behavior: smooth;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+
+        &::-webkit-scrollbar {
+          background-color: rgba($green, 1);
+          width: 8px;
+
+
+        }
+        @include vp-374{
+          width: 100vw;
+          animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+      }
+
+      .header-nav__item{
+        margin-right: 0;
+
+      }
+
+      .header-nav__link{
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 50px;
+
+        text-align: center;
+
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+
+        &--active{
+          text-decoration-color: white;
+        }
+        &:hover{
+          text-decoration: underline;
+          text-decoration-color: white;
+          text-underline-offset: size(10px);
+          transition: ease 0.5s;
+        }
+        &:focus{
+          text-decoration: underline;
+          text-decoration-color: white;
+          text-underline-offset: size(10px);
+          transition: ease 0.5s;
+        }
+        &:active{
+          text-decoration: underline;
+          text-decoration-color: transparent;
+          text-underline-offset: size(10px);
+          transition: ease 0.5s;
+        }
+      }
+
+    }
+  }
+}
+
+

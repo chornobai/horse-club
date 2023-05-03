@@ -1,0 +1,119 @@
+.footer {
+  padding: 24px 0;
+  position: relative;
+  @include vp-767 {
+    padding-bottom: 120px;
+    padding-top: 40px;
+  }
+
+  background-color: $black;
+  .container{
+    display: grid;
+    grid-template-columns: auto 1fr 200px;
+    @include vp-767{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 40px;
+    }
+  }
+}
+.footer__list{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+  column-gap: 25px;
+  margin-right: 18px;
+  align-items: center;
+  list-style: none;
+  justify-self: end;
+  @include vp-1023{
+    column-gap:calc(10px + (25 - 10)*((100vw - 768px)/(1023 - 768)));
+  }
+  @include vp-767{
+    margin-right: 0;
+    width: 100%;
+    max-width: 422px;
+    justify-content: space-between;
+  }
+}
+
+.footer__item {
+  margin-right: 10px;
+  @include vp-767{
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  a{
+    color:white;
+    font-family: 'Roboto';
+
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: right;
+    white-space: nowrap;
+    &:hover{
+      text-decoration: underline;
+      text-decoration-color: $sun;
+      text-underline-offset: size(10px);
+    }
+    &:focus{
+      text-decoration: underline;
+      text-decoration-color: $sun;
+      text-underline-offset: size(10px);
+    }
+  }
+}
+
+
+.footer-agreement-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 23px;
+  display: flex;
+  grid-column: span 2;
+  white-space: nowrap;
+  @include vp-767{
+    order: 4;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+  }
+}
+
+.footer-agreement-item{
+  margin-right: 38px;
+  @include vp-767{
+    margin-right: 0;
+  }
+}
+.footer-agreement-link {
+  font-family: 'Roboto';
+
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  text-decoration-line: underline;
+  text-underline-position: under;
+  white-space: nowrap;
+  color: $grey-next;
+  &:hover{
+    color:white;
+  }
+
+  @include vp-480 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+
+}
+.header__logo--footer{
+  @include vp-767{
+    order:3;
+  }
+
+}

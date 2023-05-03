@@ -1,0 +1,62 @@
+mixin header(headerMods, currentPage)
+  -
+    const headerLinks = [
+      {
+        href: "#",
+        text: "О нас",
+        classActive: "header-nav__link--active",
+      },
+      {
+        href: "#",
+        text: "Услуги и цены"
+      },
+      {
+        href: "#",
+        text: "Фотоальбом"
+      },
+      {
+        href: "#",
+        text: "Контакты"
+      },
+    ]
+
+  header.header(class=headerMods)
+    .container
+      .header-wrapper
+        if(currentPage === "index")
+          //- lighthouse снимает 10 баллов SEO за <a> без href
+          span.header__logo
+            img(src="img/logo/logo.png" alt="Лого Максимус" width="152" height="59")
+        else
+          a.header__logo(href="index.html", aria-label="Переход на главную")
+            img(src="img/logo/logo.png" alt="Лого Максимус" width="152" height="59")
+        nav.header-nav
+          button.header-nav__toggle(type="button", aria-label="Переключатель отображения меню", aria-pressed="false") Меню
+            +icon("icon-burger", 20, 20).menu-on
+          button.header-nav__toggle-close(type="button", aria-label="Переключатель скрытия меню", aria-pressed="false")
+            +icon("icon-close", 13, 13).menu-close
+
+
+          ul.header-nav__list
+            each link, index in headerLinks
+              li.header-nav__item
+                if(index === currentPage)
+                  a.header-nav__link.header-nav__link--active=link.text
+                else
+                  a.header-nav__link(class=link.classActive, href=link.href)=link.text
+        .header__info
+          +icon("icon-phone", 16, 16)
+          a.header__info-phone(href="tel:+70000000000", aria-label="Телефон клуба") +7 (000) 000-00-00
+          p.header__info-work Ежедневно 9:00 – 22:00
+      +intro()
+
+
+
+    <div class= "header__layer header__layer--bush-left"></div>
+    <div class= "header__layer header__layer--bush-right"></div>
+
+
+      <div class= "header__layer header__layer--clouds" style="background-image: url(../img/decore/clouds.png);"></div>
+
+
+

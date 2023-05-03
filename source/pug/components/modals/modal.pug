@@ -1,0 +1,16 @@
+mixin modal(name)
+  section.modal(class= `modal--${name}`, data-modal)
+    .modal-wrapper
+      .modal-overlay(data-modal-close)
+      .modal-content
+        button.modal-button-close(type="button", aria-label="Закрыть попап", data-modal-close)
+          +icon("icon-close", 15, 15)
+        h2 Записаться на бесплатный урок
+
+        .modal-form(data-validate)
+          form(method="POST", action="#")&attributes(attributes)
+                  div(class= 'modal-form-list', data-callback="base")
+                    +custom-input({inputType: "text", inputId: `name-modal`, inputName: `name-modal`, inputPlaceholder: "Ваше имя",inputError: "Некорректное имя"})(data-validate-type= "text", data-limitations="letters", data-focus)
+                    +custom-input({inputType: "tel", inputId: `phone-modal`, inputName: `phone-modal`, inputPlaceholder: "Ваш телефон",inputError: "Некорректный телефон"})(data-validate-type= "phone")
+                  +btn({text: 'Записаться', type: "submit"})(data-open-modal-success).button.button--yellow
+
