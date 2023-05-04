@@ -27,8 +27,14 @@
     z-index: 99;
     background: url("../img/decore/clouds.png") repeat center;
     background-size: cover;
-
     animation: kenburns-bottom 10s ease-out infinite both;
+
+    @include vp-1023 {
+      bottom: -58px;
+    }
+    @include vp-767 {
+      bottom: 0;
+    }
   }
 
   .form-clouds {

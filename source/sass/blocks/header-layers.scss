@@ -38,13 +38,6 @@
     }
   }
 
-  &--clouds {
-    background-repeat: repeat-y;
-    height: calc(74px + (189 - 74)*((100vw - 320px)/(1023 - 320)));
-    bottom: -2px;
-    background-size: cover;
-    transform: translate3d(0, calc(var(--scrollTop) / 15), 0);
 
-  }
 
 }

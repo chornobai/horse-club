@@ -3,10 +3,12 @@
   background: url('../img/bg/bg-trend.png') no-repeat center;
   background-size: cover;
   position: relative;
-  padding-bottom: 278px;
+  padding-bottom: calc(258px + (278 - 258)*((100vw - 1023px)/(1920 - 1023)));
   margin-bottom: 143px;
   overflow: hidden;
-
+  @include vp-767 {
+    padding-bottom: calc(154px + (258 - 154)*((100vw - 480px)/(767 - 480)));
+  }
 
   .container {
     display: flex;
@@ -29,7 +31,6 @@
       }
       @include vp-374 {
         font-size: 21px;
-
       }
     }
 
@@ -48,16 +49,14 @@
         font-size: 13px;
       }
 
-
     }
-
 
   }
   .trend__list {
 
     position: relative;
     padding: 0;
-    margin: 0;
+    margin: 40px 0 0 0;
 
 
 
@@ -68,63 +67,62 @@
     &::after{
       position: absolute;
       content: "";
-      height: 530px;
-      width: 305px;
-      bottom: -292px;
-      left: -239px;
+      height: calc(350px + (530 - 350)*((100vw - 1023px)/(1920 - 1023)));
+      width: calc(202px + (305 - 202)*((100vw - 1023px)/(1920 - 1023)));
+      bottom:calc(-302px + (-292 - -302)*((100vw - 1023px)/(1920 - 1023)));
+      left: calc(-23px + (-239 - -23)*((100vw - 1023px)/(1920 - 1023)));
       z-index: 10;
 
-      background: url('../img/decore/horse-left.png') no-repeat center;
+      background-image: url('../img/decore/horse-left.png');
+      background-repeat: no-repeat;
+      background-position: center;
       background-size: cover;
 
-      @include vp-1023{
-        height: 272px;
-        width: 157px;
-        background-size: cover;
-        bottom: -257px;
-        left: -20px;
-      }
+      @include vp-1023 {
 
-      @include vp-480 {
-        height: 196px;
-        width: 113px;
+        left: calc(-17px + (-23 - -17)*((100vw - 768px)/(1023 - 767)));
 
       }
 
+      @include vp-767 {
+        height: calc(196px + (350 - 196)*((100vw - 480px)/(767 - 480)));
+        width: calc(113px + (202 - 113)*((100vw - 480px)/(767 - 480)));
+        bottom: calc(-178px + (-303 - -178)*((100vw - 480px)/(767 - 480)));
+      }
       @include vp-374 {
-        height: 149px;
-        width: 86px;
+        display: none;
       }
+
     }
     &::before{
       position: absolute;
       content: "";
-      background: url('../img/decore/horse-right.png') no-repeat center;
+      background-image: url('../img/decore/horse-right.png') ;
+      background-repeat: no-repeat;
+      background-position: center;
+
       background-size: cover;
-      height: 532px;
-      width: 372px;
-      bottom: -302px;
-      right: -291px;
+      height: calc(342px + (532 - 342)*((100vw - 1023px)/(1920 - 1023)));
+      width:  calc(239px + (372 - 239)*((100vw - 1023px)/(1920 - 1023)));
+      bottom: calc(-303px + (-302 - -303)*((100vw - 1023px)/(1920 - 1023)));
+
+      right: calc(-23px + (-300 - -23)*((100vw - 1023px)/(1920 - 1023)));
+
       z-index: 10;
 
       @include vp-1023 {
-
-        height: 270px;
-        width: 189px;
-        right: -36px;
-        bottom: -256px;
-        background-size: cover;
+        right: calc(-32px + (-23 - -32)*((100vw - 768px)/(1023 - 767)))
       }
 
-      @include vp-480 {
-        height: 199px;
-        width: 119px;
-
+      @include vp-767 {
+        height: calc(199px + (342 - 199)*((100vw - 480px)/(767 - 480)));
+        width: calc(139px + (239 - 139)*((100vw - 480px)/(767 - 480)));
+        bottom: calc(-178px + (-303 - -178)*((100vw - 480px)/(767 - 480)));
       }
+
 
       @include vp-374 {
-        height: 141px;
-        width: 98px;
+        display: none;
       }
     }
 

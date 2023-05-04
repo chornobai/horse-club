@@ -14,7 +14,7 @@ import {mapApi} from './modules/map';
 
 import {initMansory} from './modules/init-mansory';
 import {widthSlider} from './utils/width-slider';
-import {initScrollSmooth} from './modules/init-scroll-smooth';
+
 
 
 
@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initReview();
   mapApi();
   widthSlider();
-  initScrollSmooth();
+
 
   // Utils
   // ---------------------------------
