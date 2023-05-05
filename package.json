@@ -57,6 +57,7 @@
     "webpack-stream": "5.2.1"
   },
   "dependencies": {
+    "@babel/core": "^7.21.8",
     "jquery": "^3.6.4"
   }
 }
